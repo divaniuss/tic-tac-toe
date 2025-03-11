@@ -5,7 +5,7 @@ class Field:
                      ['','','']]
         self.count_x = 0
         self.count_y = 0
-        self.is_win = 0 # - false 1 - True
+        self.is_win = 0 # 0 - false 1 - True
         self.count_tie = 0
 
     def step(self, raw, col, req):
@@ -47,9 +47,6 @@ class Field:
         else:
             return True
 
-
-
-
     def CheckRows(self):
         for row in self.pole:
             self.count_x = 0
@@ -64,7 +61,6 @@ class Field:
                     if self.count_y == 3:
                         self.is_win = 1
                 else:
-                    # print("net row ")
                     break
 
 
@@ -83,31 +79,23 @@ class Field:
                     if self.count_y  == 3:
                         self.is_win = 1
                 else:
-                    # print("net col")
                     break
 
     def CheckDiagonal(self):
         self.count_x = 0
         self.count_y = 0
         for Index in range(0, len(self.pole)):
-
             elem = self.pole[Index][Index]
             if elem == "x":
                 self.count_x += 1
                 if self.count_x == 3:
                     self.is_win = 1
-                    # print("da diag")
             elif elem == "o":
                 self.count_y += 1
                 if self.count_y == 3:
                     self.is_win = 1
             else:
-                # print("net diag")
                 break
-
-
-
-
 
     def CheckDiagonalReverse(self):
         self.count_x = 0
@@ -123,17 +111,7 @@ class Field:
                 if self.count_y == 3:
                     self.is_win = 1
             else:
-                # print("net diag rev")
                 break
-
-
 
 f = Field()
 
-# f.CheckRows()
-# print("\n")
-# f.CheckCols()
-# print("\n")
-# f.CheckDiagonal()
-# f.CheckDiagonalReverse()
-# print(f.OutField())
