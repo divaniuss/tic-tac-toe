@@ -1,3 +1,25 @@
-Tic-tac-toe game for 2 clients on 1 server
+# Network Tic-Tac-Toe Game
 
-First connection is X, second is O
+This code implements a network-based Tic-Tac-Toe game for two players using a client-server architecture.
+
+## General Workflow
+
+### Server (Server):
+Waits for two clients to connect.
+Assigns "X" to one player and "O" to the other.
+Receives moves from clients and updates the game board (Field).
+Checks for win conditions, a tie, or an occupied cell.
+Sends the move result to the other player.
+
+### Clients (Client and Client2):
+Connect to the server.
+Receive their assigned symbols ("X" or "O").
+Enter move coordinates and send them to the server.
+Receive the updated game board or a game-over message.
+
+### Game Board (Field):
+Stores the current game state.
+Checks if a move results in a win.
+Displays the current game board.
+
+Thus, clients interact with the server, which manages the game logic.
